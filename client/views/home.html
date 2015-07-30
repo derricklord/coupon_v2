@@ -1,0 +1,33 @@
+<div class="jumbotron">
+    <div class="container">
+        <ul class="genres">
+            <li ng-repeat="type in couponType">
+                <span ng-click="filterByType(type)">{{type}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{headingTitle}}
+            <div class="pull-right">
+                <input class="search" type="text" ng-model="query.name" placeholder="Search...">
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row show-list">
+                <div class="fade-repeat col-xs-4 col-md-3" ng-repeat="coupon in coupons | filter:filter">
+                    <a href="/coupons/{{coupon._id}}">
+                        <img class="img-rounded" ng-src="" src="http://placehold.it/400x200" width="100%"/>
+                    </a>
+                    <div class="text-center">
+                        <a href="/coupons/{{coupon._id}}">{{coupon.desc}}</a>
+                        <p class="text-muted"></p>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>
